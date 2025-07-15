@@ -1,0 +1,350 @@
+/* 🔁 Full-page background video */
+.webmobback {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* 🔼 Scrollable content container */
+.webmob-page {
+  position: relative;
+  z-index: 1;
+  color: white;
+  font-family: "Inter", sans-serif;
+  padding: 100px 20px;
+}
+
+.webmob-hero-section {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Centered text content */
+.webmob-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* Gradient Title */
+.webmob-gradient-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  background: linear-gradient(to bottom, #ffe8c4, #5d5240);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  letter-spacing: 4px;
+}
+
+/* Subtitle text */
+.webmob-subtitle {
+  color: white;
+  font-size: clamp(1.5rem, 3vw, 2rem); /* ⬅️ Increased size */
+  margin-top: 15px;
+  letter-spacing: 14px;
+  font-weight: 400;
+}
+
+.webmob-text-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 3;
+  position: relative;
+}
+
+.webmob-heading {
+  width: fit-content; /* Wrap to text width */
+  max-width: 100%; /* Prevent overflow */
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 auto 20px auto; /* ⬅️ Centers horizontally */
+  border-bottom: 2px solid #bda27c;
+  display: block; /* Optional, works with block or inline-block */
+  padding-bottom: 10px;
+}
+
+.webmob-paragraph {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  text-align: justify;
+  color: white;
+}
+
+.highlight {
+  color: #bda27c;
+  font-weight: bold;
+}
+.webmob-feature-list {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.feature-line {
+  width: 4px;
+  background-color: #bda27c; /* beige line */
+  border-radius: 4px;
+  min-height: 60px;
+  margin-top: 4px;
+}
+
+.feature-item p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: white;
+  margin: 0;
+}
+.our-work-section {
+  text-align: center;
+  margin-top: 60px;
+  padding: 0 20px;
+}
+
+.our-work-title {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 40px;
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.our-work-title::first-letter {
+  text-transform: uppercase;
+}
+
+.our-work-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.our-work-title .italic {
+  font-style: italic;
+  font-weight: 900;
+  background: linear-gradient(to right, #ffe8c4, #5d5240);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.our-work-title::before,
+.our-work-title::after {
+  content: "";
+  flex: 1;
+}
+
+.our-work-title span:not(.italic) {
+  color: transparent;
+  -webkit-text-stroke: 1.2px white;
+  font-weight: 900;
+}
+
+.our-work-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Force 3 per row */
+  gap: 20px;
+  padding: 0 30px;
+}
+
+.our-work-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+/* Mobile and Responsive Adjustments */
+
+/* Hero Section */
+@media (max-width: 768px) {
+  .webmob-hero-section {
+    height: 60vh; /* Shorter hero on mobile */
+    padding-top: 80px; /* Adjust for navbar */
+  }
+
+  .webmob-hero-content {
+    padding: 0 15px;
+  }
+
+  .webmob-gradient-title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    letter-spacing: 2px;
+  }
+
+  .webmob-subtitle {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    letter-spacing: 4px;
+  }
+}
+
+/* Text Section */
+@media (max-width: 768px) {
+  .webmob-page {
+    padding: 60px 15px;
+  }
+
+  .webmob-text-section {
+    padding: 40px 15px;
+    max-width: 100%;
+  }
+
+  .webmob-heading {
+    font-size: 1.4rem;
+    padding-bottom: 8px;
+  }
+
+  .webmob-paragraph {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify; /* Improved readability on mobile */
+  }
+}
+
+/* Feature List */
+@media (max-width: 768px) {
+  .webmob-feature-list {
+    margin: 30px auto;
+    padding: 0 15px;
+    gap: 20px;
+  }
+
+  .feature-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .feature-line {
+    width: 100%;
+    height: 4px;
+    min-height: 0;
+    margin-top: 0;
+  }
+
+  .feature-item p {
+    font-size: 1rem;
+    text-align: justify;
+  }
+}
+
+/* Our Work Section */
+@media (max-width: 768px) {
+  .our-work-section {
+    margin-top: 40px;
+    padding: 0 15px;
+  }
+
+  .our-work-title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 20px;
+    gap: 5px;
+  }
+
+  .our-work-gallery {
+    gap: 20px;
+    padding: 0 2px;
+    display: inline;
+  }
+
+  .our-work-gallery img {
+    border-radius: 8px;
+    width: 380px;
+    height: 250px;
+    padding-bottom: 20px;
+  }
+}
+
+/* Tablet View (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .webmob-hero-section {
+    padding-top: 90px;
+  }
+
+  .webmob-gradient-title {
+    font-size: clamp(2rem, 5.5vw, 3rem);
+  }
+
+  .webmob-subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+  }
+
+  .webmob-text-section {
+    padding: 50px 20px;
+  }
+
+  .webmob-feature-list {
+    padding: 0 20px;
+  }
+
+  .our-work-gallery {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+    gap: 15px;
+  }
+}
+
+/* Larger Screens (min-width: 1440px) */
+@media (min-width: 1440px) {
+  .webmob-page {
+    padding: 120px 40px;
+  }
+
+  .webmob-hero-section {
+    padding-top: 120px;
+  }
+
+  .webmob-gradient-title {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+  }
+
+  .webmob-subtitle {
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+  }
+
+  .webmob-heading {
+    font-size: 2rem;
+  }
+
+  .webmob-paragraph {
+    font-size: 1.2rem;
+  }
+
+  .webmob-feature-list {
+    max-width: 1200px;
+    margin: 60px auto;
+  }
+
+  .feature-item p {
+    font-size: 1.2rem;
+  }
+
+  .our-work-title {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+  }
+
+  .our-work-gallery {
+    gap: 30px;
+    padding: 0 40px;
+  }
+}

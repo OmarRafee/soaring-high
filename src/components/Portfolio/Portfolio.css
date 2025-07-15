@@ -1,0 +1,16 @@
+/* src/pages/Portfolio.css */
+
+.portfolio-page {
+  background-color: black;
+  padding-top: 100px; /* Adjust if navbar is fixed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.portfolio-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}

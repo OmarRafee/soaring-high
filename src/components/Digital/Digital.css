@@ -1,0 +1,266 @@
+.digital-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: black;
+  font-family: "Inter", sans-serif;
+  color: white;
+}
+
+.digital-video-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.digital-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.digital-overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.digital-title {
+  color: white;
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-shadow: 0 0 10px rgba(189, 162, 124, 0.5);
+}
+
+/* Section Below Video */
+.digital-text-section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+}
+
+.digital-heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #bda27c;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.digital-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: justify;
+  color: white;
+}
+.hollow {
+  color: transparent;
+  -webkit-text-stroke: 1px #bda27c;
+  font-weight: bold;
+}
+
+.highlight {
+  color: #bda27c;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.digital-services-section {
+  padding: 60px 20px;
+}
+
+.digital-services-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.digital-service-box {
+  display: flex;
+  border: 1px solid #bda27c;
+  border-radius: 20px;
+  margin: 50px 150px;
+  background: #000;
+  color: white;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.service-left {
+  flex: 1;
+  text-align: center;
+  border-right: 1px solid #bda27c;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-left img {
+  width: 120px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.service-left p {
+  font-size: 20px;
+  color: white;
+}
+
+.service-left p span {
+  color: #bda27c;
+}
+
+.service-right {
+  flex: 3;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  line-height: 1.7;
+  text-align: justify;
+  font-size: 22px;
+}
+
+.digital-gallery-section {
+  padding: 60px 20px;
+  background-color: #000;
+  text-align: center;
+}
+
+.gallery-heading {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+
+.empty-text {
+  color: transparent;
+  -webkit-text-stroke: 1px #bda27c;
+  font-weight: bold;
+}
+
+.filled-text {
+  color: #bda27c;
+  font-style: italic;
+  font-weight: bold;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-image {
+  width: 400px;
+  height: 500px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(189, 162, 124, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .digital-service-box {
+    margin: 30px 50px;
+    flex-direction: column;
+  }
+
+  .service-left {
+    border-right: none;
+    border-bottom: 1px solid #bda27c;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  .service-right {
+    padding: 20px 0;
+  }
+
+  .gallery-image {
+    width: 300px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .digital-services-section {
+    padding: 20px 40px;
+  }
+
+  .gallery-image {
+    width: 250px;
+    height: 300px;
+  }
+  .digital-video {
+    height: 40vh;
+    object-fit: cover;
+  }
+  .digital-video-container {
+    position: relative;
+    height: 40vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .gallery-image {
+    max-width: 200px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .digital-video {
+    height: 40vh;
+    object-fit: cover;
+  }
+  .digital-title {
+    font-size: 2rem;
+  }
+
+  .digital-service-box {
+    margin: 15px 10px;
+  }
+
+  .service-left p,
+  .service-right {
+    font-size: 16px;
+  }
+
+  .gallery-image {
+    width: 100%;
+    height: 300px;
+  }
+}
+.digital-title,
+.digital-heading,
+.digital-paragraph,
+.digital-service-box,
+.service-left p,
+.service-left p span,
+.service-right,
+.gallery-heading,
+.empty-text,
+.filled-text {
+  font-family: "Inter", sans-serif;
+}

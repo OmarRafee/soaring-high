@@ -1,0 +1,277 @@
+/* src/components/Navbar/Navbar.css */
+
+.navbar-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: white;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-container.scrolled {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 40px;
+  padding-top: 8px;
+  font-size: 0.9rem;
+  background: transparent;
+  align-items: center;
+}
+
+.navbar-email {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 30px;
+}
+
+.navbar-email .icon {
+  font-size: 1.1rem;
+}
+
+.navbar-socials {
+  display: flex;
+  gap: 16px;
+  font-size: 1.1rem;
+  align-items: center;
+}
+
+.navbar-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px 40px;
+  background: transparent;
+}
+
+.nav-left,
+.nav-right {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-left li a,
+.nav-right li a,
+.nav-left li span {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-family: "Inter", sans-serif;
+  font-size: larger;
+}
+
+.nav-left li a:hover,
+.nav-right li a:hover,
+.nav-left li span:hover {
+  color: #bda27c;
+}
+
+.navbar-logo img {
+  height: 100px;
+  width: 150px;
+}
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 10px 0;
+  display: none;
+  flex-direction: column;
+  border-radius: 4px;
+  z-index: 1000;
+  width: 500px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-menu li {
+  padding: 8px 20px;
+}
+
+.dropdown-menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dropdown-menu li a:hover {
+  color: #bda27c;
+}
+/* Mobile and Responsive Adjustments */
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  z-index: 1001;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu.open {
+  display: flex;
+  transform: translateX(0);
+}
+
+.mobile-menu .nav-left,
+.mobile-menu .nav-right {
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+
+.mobile-menu .nav-left li,
+.mobile-menu .nav-right li {
+  margin: 10px 0;
+}
+
+.mobile-menu .nav-left li a,
+.mobile-menu .nav-right li a,
+.mobile-menu .nav-left li span {
+  font-size: 1.2rem;
+}
+
+.mobile-menu .dropdown-menu {
+  position: static;
+  background: transparent;
+  padding: 10px 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobile-menu .dropdown.open .dropdown-menu {
+  display: flex;
+}
+
+/* Mobile View (max-width: 768px) */
+@media (max-width: 768px) {
+  .navbar-top {
+    padding: 8px 15px;
+    font-size: 0.8rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .navbar-email {
+    gap: 6px;
+  }
+
+  .navbar-socials {
+    gap: 12px;
+    font-size: 1rem;
+  }
+
+  .navbar-main {
+    padding: 10px 15px;
+    position: relative;
+  }
+
+  .desktop-menu {
+    display: none; /* Hide desktop menu on mobile */
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .navbar-logo img {
+    height: 40px;
+  }
+
+  .mobile-menu .dropdown {
+    position: static;
+  }
+
+  .mobile-menu .dropdown-menu li {
+    padding: 8px 0;
+  }
+}
+
+/* Tablet View (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .navbar-top {
+    padding: 8px 20px;
+  }
+
+  .navbar-main {
+    padding: 10px 20px;
+  }
+
+  .nav-left,
+  .nav-right {
+    gap: 20px;
+  }
+
+  .navbar-logo img {
+    height: 50px;
+  }
+}
+
+/* Larger Screens (min-width: 1440px) */
+@media (min-width: 1440px) {
+  .navbar-top {
+    padding: 10px 60px;
+    font-size: 1rem;
+  }
+
+  .navbar-email .icon {
+    font-size: 1.2rem;
+  }
+
+  .navbar-socials {
+    font-size: 1.2rem;
+    gap: 20px;
+  }
+
+  .navbar-main {
+    padding: 15px 60px;
+  }
+
+  .nav-left,
+  .nav-right {
+    gap: 40px;
+  }
+
+  .navbar-logo img {
+    height: 70px;
+  }
+}
