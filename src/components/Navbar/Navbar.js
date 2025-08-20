@@ -63,7 +63,7 @@ const Navbar = () => {
               <span onClick={toggleServicesDropdown}>SERVICES ▼</span>
               <ul className="dropdown-menu">
                 <li>
-                  <Link to="/webmob">Web & Mobile Development</Link>
+                  <Link to="/webmob">Web & Mobile Development </Link>
                 </li>
                 <li>
                   <Link to="/digital">360° Digital Campaigns</Link>
@@ -79,6 +79,12 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link to="/">Branding & Rebranding</Link>
+                </li>
+                <li>
+                  <Link to="/">Business Setup</Link>
+                </li>
+                <li>
+                  <Link to="/">Business Solutions</Link>
                 </li>
               </ul>
             </li>
@@ -130,6 +136,15 @@ const Navbar = () => {
               </li>
               <li>
                 <Link to="/">Branding & Rebranding</Link>
+              </li>
+              <li>
+                <Link to="/business-setup">Business Setup</Link>
+              </li>
+               <li>
+                <Link to="/business-solutions">Business Solutions</Link>
+              </li>
+               <li>
+                <Link to="/marketing-advertising">Marketing & Advertising</Link>
               </li>
             </ul>
           </li>

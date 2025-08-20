@@ -189,6 +189,7 @@ const Home = () => {
 
   return (
     <>
+
       <div className="hero-container">
         <img src={heroImage} alt="Dubai" className="hero-image" />
         <div className="hero-horizontal">
